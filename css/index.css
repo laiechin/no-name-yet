@@ -33,7 +33,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: 'OpenSans-SemiBold'; src: url("no-name-yet/font/_Open_Sans-www/OpenSans-SemiBold.ttf");
+	font-family: 'OpenSans-SemiBold'; src: url("../font/_Open_Sans-www/OpenSans-SemiBold.ttf");
 }
 
 .left .handle span{
@@ -73,7 +73,7 @@ body{
 	/*display:none;*/
 	z-index: 9999;
 	color: #fff;
-	font-family: 'OpenSans-SemiBold'; src: url("no-name-yet/font/_Open_Sans-www/OpenSans-SemiBold.ttf");
+	font-family: 'OpenSans-SemiBold'; src: url("../font/_Open_Sans-www/OpenSans-SemiBold.ttf");
 }
 
 .left .close{
