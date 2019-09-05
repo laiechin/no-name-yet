@@ -1,0 +1,50 @@
+@font-face {
+		font-family: "No Name Yet - vo.1";
+				src: url("NoNameYet-vo.1GX.ttf");
+			}
+
+body {
+font-family: 'No Name Yet - vo.1';
+text-rendering: geometricPrecision;
+margin: 10vh auto;
+text-align: center;
+overflow: hidden;
+}
+
+@keyframes wacky  {
+0%   {font-variation-settings: "gric" 0, "mtic" 0, "lear" 0; }
+25%   {font-variation-settings: "gric" 100, "mtic" 0, "lear" 0; }
+50%   {font-variation-settings: "gric" 0, "mtic" 100, "lear" 0; }
+75%   {font-variation-settings: "gric" 0, "mtic" 0, "lear" 100;  }
+100% {font-variation-settings: "gric" 0, "mtic" 0, "lear" 0; }
+	}
+
+p {
+  	animation:  wacky infinite;
+    animation-duration: 15s;
+    animation-timing-function: ease;
+    font-size: 11vh;
+    margin: 0 auto;
+    line-height: 1.2;
+    font-weight: normal;
+	}
+
+	p:nth-child(2) {
+  	animation-delay: .1s
+	}
+	
+	p:nth-child(3) {
+ 	 animation-delay: .2s
+	}
+
+	p:nth-child(4) {
+  	animation-delay: .3s
+	}
+
+	p:nth-child(5) {
+	animation-delay: .4s
+	}
+	
+	p:nth-child(6) {
+  	animation-delay: .5s
+	}
