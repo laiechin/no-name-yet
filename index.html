@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>No Name Yet vo.1 - variable font</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/movement.css">
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/tester.css">
+	<link rel="stylesheet" href="font/_NNY/stylesheet.css">
+	<link rel="stylesheet" href="font/_Open_Sans-www/stylesheet.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+
+		$(function(){ // <-> onload
+			console.log("ok");
+
+			$( "#text_move" ).attr("contenteditable", true);
+			$( "#text_tester" ).attr("contenteditable", true);
+
+			updateSlider_move();
+
+			$( ".left" ).mousemove(function( event ) {
+				// var pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
+				// var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+
+				var x = event.pageX / $('body').width() * 100;
+				var y = event.pageY / $('body').height() * 100;
+
+				console.log(x, y);
+
+				$(".move #gric_move").val(x);
+				$(".move #mtic_move").val(y);
+
+
+				updateSlider_move();
+				// $( "span:first" ).text( "( event.pageX, event.pageY ) : " + pageCoords );
+				// $( "span:last" ).text( "( event.clientX, event.clientY ) : " + clientCoords );
+			});
+		});
+
+
+
+		// function updateParagraph() {
+		// 	// update paragraph text based on user input:
+		// 	var userinput = document.getElementById("textInput");
+		// 	var paragraph = document.getElementById("text_move");
+		// 	paragraph.textContent = userinput.value;
+		// }
+				
+		function updateSlider_move() {
+			var body = document.getElementById("text_move");
+			var sliders = document.getElementsByClassName("slider_move")
+			var bodystyle = "";
+			var settingtext = "";
+			for (var i = 0; i < sliders.length; i++) {
+				var sliderID = sliders[i].id;
+				var sliderParam = sliders[i].dataset.param;
+				var sliderValue = sliders[i].value;
+				var label = document.getElementById("label_"+sliderID);
+				var labelName = label.getAttribute("name");
+				
+				label.textContent = ""+labelName+": "+sliderValue
+
+				if (sliderParam == "fontsize") {
+					// Text Size Slider
+					bodystyle += "font-size: "+sliderValue+"px;"
+					label.textContent += "px"
+				} else if (sliderParam == "lineheight") {
+					// Line Height Slider
+					bodystyle += "line-height: "+sliderValue/100.0+"em;"
+					label.textContent += "%"
+				} else {
+					// OTVar Slider
+					if (settingtext != "") { settingtext += ", " }
+					settingtext += '"' + sliderParam + '" ' + sliderValue
+				}
+			}
+			bodystyle += "font-variation-settings: "+settingtext+";"
+			body.setAttribute("style", bodystyle);
+		}
+
+
+
+		function updateSlider_tester() {
+			var body = document.getElementById("text_tester");
+			var sliders = document.getElementsByClassName("slider_tester")
+			var bodystyle = "";
+			var settingtext = "";
+			for (var i = 0; i < sliders.length; i++) {
+				var sliderID = sliders[i].id;
+				var sliderParam = sliders[i].dataset.param;
+				var sliderValue = sliders[i].value;
+				var label = document.getElementById("label_"+sliderID);
+				var labelName = label.getAttribute("name");
+				
+				label.textContent = ""+labelName+": "+sliderValue
+
+				if (sliderParam == "fontsize") {
+					// Text Size Slider
+					bodystyle += "font-size: "+sliderValue+"px;"
+					label.textContent += "px"
+				} else if (sliderParam == "lineheight") {
+					// Line Height Slider
+					bodystyle += "line-height: "+sliderValue/100.0+"em;"
+					label.textContent += "%"
+				} else {
+					// OTVar Slider
+					if (settingtext != "") { settingtext += ", " }
+					settingtext += '"' + sliderParam + '" ' + sliderValue
+				}
+			}
+			bodystyle += "font-variation-settings: "+settingtext+";"
+			body.setAttribute("style", bodystyle);
+		}
+	</script>
+</head>
+<body>
+
+	<div class="drawer left">
+		<div class="handle"><span>Dark</span></div>
+		<div class="close">This way out</div>
+
+		<div class="scrollcontainer">
+		<!-- DRAWER CONTENT GOES HERE -->
+
+			<div class="move">
+
+				<!-- <input type="text" value="Dark Side Of The Moon" id="textInput" onkeyup="updateParagraph();" onclick="this.select();" /> -->
+				
+				<div>
+					<div class="labeldiv"><label class="sliderlabel hide" id="label_fontsize_move" name="Font Size">Font Size</label><input type="range" min="10" max="300" value="140" class="slider slider_move" id="fontsize_move" data-param="fontsize" oninput="updateSlider_move();"></div>
+
+					<div class="labeldiv"><label class="sliderlabel hide" id="label_lineheight_move" name="Line Height">Line Height</label><input type="range" min="30" max="300" value="100" class="slider slider_move" id="lineheight_move" data-param="lineheight" oninput="updateSlider_move();"></div>
+					
+					<div class='labeldiv'><label class='sliderlabel hide' id='label_gric_move' name='Geometric'>Geometric</label><input type='range' min='0' max='100' value='0' class='slider slider_move' id='gric_move' data-param="gric" oninput='updateSlider_move();'></div>
+					
+					<div class='labeldiv'><label class='sliderlabel hide' id='label_mtic_move' name='Mimetic'>Mimetic</label><input type='range' min='0' max='100' value='0' class='slider slider_move' id='mtic_move' data-param="mtic" oninput='updateSlider_move();'></div>
+					
+					<div class='labeldiv'><label class='sliderlabel hide' id='label_lear_move' name='Linear'>Linear</label><input type='range' min='0' max='100' value='0' class='slider slider_move' id='lear_move'  data-param="lear" oninput='updateSlider_move();'></div>
+				</div>
+
+				<p id="text_move" class="noselect texttry">DARK SIDE OF THE MOON</p>
+  
+  			</div>
+
+		<!-- END of DRAWER CONTENT -->
+		</div>
+	</div>
+
+
+
+
+	
+	<div class="drawer right">
+		<div class="handle"><span>Light</span></div>
+		<div class="close">This way out</div>
+
+		<div class="scrollcontainer">
+		<!-- DRAWER CONTENT GOES HERE -->
+			
+			<div class="tester">
+
+				<!-- <input type="text" value="TYPE! TYPE! TYPE!" id="textInput" onkeyup="updateParagraph();" onclick="this.select();" /> -->
+
+					
+				<div class="labeldiv">
+					<label class="sliderlabel" id="label_fontsize_tester" name="Font Size">Font Size</label>
+					<input type="range" min="10" max="300" value="300" class="slider slider_tester" id="fontsize_tester" data-param="fontsize"  oninput="updateSlider_tester();">
+				</div>
+
+				<div class="labeldiv">
+					<label class="sliderlabel" id="label_lineheight_tester" name="Line Height">Line Height</label>
+					<input type="range" min="30" max="300" value="100" class="slider slider_tester" id="lineheight_tester" data-param="lineheight" oninput="updateSlider_tester();">
+				</div>
+					
+				<div class='labeldiv'>
+					<label class='sliderlabel' id='label_gric_tester' name='Geometric'>Geometric</label>
+					<input type='range' min='0' max='100' value='0' class='slider slider_tester' id='gric_tester' data-param="gric" oninput='updateSlider_tester();'>
+				</div>
+					
+				<div class='labeldiv'>
+					<label class='sliderlabel' id='label_mtic_tester' name='Mimetic'>Mimetic</label>
+					<input type='range' min='0' max='100' value='0' class='slider slider_tester' id='mtic_tester' data-param="mtic" oninput='updateSlider_tester();'>
+				</div>
+					
+				<div class='labeldiv'>
+					<label class='sliderlabel' id='label_lear_tester' name='Linear'>Linear</label>
+					<input type='range' min='0' max='100' value='0' class='slider slider_tester' id='lear_tester' data-param="lear" oninput='updateSlider_tester();'>
+				</div>
+				
+				<p id="text_tester" class="noselect texttry" contenteditable="true">&#x0041; &#x0042; &#x0043; &#x0044; &#x0045; &#x0046; &#x0047; &#x0048; &#x0049; &#x004A; &#x004B; &#x004C; &#x004D; &#x004E; &#x004F; &#x0050; &#x0051; &#x0052; &#x0053; &#x0054; &#x0055; &#x0056; &#x0057; &#x0058; &#x0059; &#x005A; &#x00C6; &#x0152;</p>
+
+			</div>
+
+		<!-- END of DRAWER CONTENT -->
+		</div>
+	</div>
+
+	<main>
+		<div class="scrollcontainer">
+		<!-- CENTER CONTENT GOES HERE -->
+			<div class="animation2">
+				<p>FOUR VARIATIONS</p>
+				<p>ON NOTHING</p>
+				<p>OR TALKING ABOUT</p>
+				<p>THAT WHICH HAS</p>
+				<p>NO NAME YET</p>
+			</div>
+
+
+			<div class="titre" id="start">
+ 			NO NAME YET
+ 			</div>
+ 			<div id="intro">
+ 			A variable typeface that aims to experiment on the definition of legibility, 
+ 			between a conventional alphabet and abstract signs. 
+ 			The typeface blurs the edge of legibility, creating a familiar but also abstract impression that gives the font a unique character. It combines a conventional legible typeface (Open Sans Regular) and three forms of abstraction, which are Geometric, Mimetic and Linear.
+			</div>
+
+
+			<div id="variantes">
+ 				<div class="variantes-col">
+ 					<div>Geometric</div>
+ 					<img src="imgs/Y-N.gif">
+ 				</div>
+ 				<div class="variantes-col">
+ 					<div>Mimetic</div>
+ 					<img src="imgs/E-N.gif">
+ 				</div>
+ 				<div class="variantes-col">
+ 					<div>Linear</div>
+ 					<img src="imgs/T-N.gif">
+ 				</div>
+ 				<div class="clear"></div>
+
+ 			</div>
+ 			<div id="variantes-text">
+
+			<span class="variantes-dot">☻</span>&nbsp Experience some abstract things, go to the “Dark”<br>
+			<span class="variantes-dot">☻</span>&nbsp Try the typeface, go to the “Light”<br>
+			<span class="variantes-dot">☻</span>&nbsp Find out the type in use in the bottom
+			</div>
+
+			<div class="titre">
+ 			mooooove!
+ 			</div>
+
+
+ 			<div id="grille">
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/1.gif);"></div>
+ 				
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/2.gif);"></div>
+ 				
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/3.gif);"></div>
+ 				
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/4.gif);"></div>
+ 				
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/5.gif);"></div>
+ 				
+ 				<!-- POSTER -->
+ 				<div class="poster" style="background-image:url(imgs/Poster/6.gif);"></div>
+ 				
+
+ 				<div class="clear"></div>
+
+ 			</div><!-- #grille -->
+
+
+ 			<div id="index-anim">
+ 				<iframe src="Animation/03-sliding-text-effect/index.html" style="border:none;" frameborder="0" scrolling="no"></iframe>
+ 			</div>
+
+ 			<div id="custom-cursor"></div>
+
+		
+		<!-- END of CENTER CONTENT -->
+		</div>
+	</main>
+	
+<script>
+var largeurPoster = $('.poster:first-child').width();
+var hauteurPoster = Math.floor(largeurPoster * 1.44);
+console.log(hauteurPoster);
+$('.poster').each(function() {
+	$(this).height(hauteurPoster);
+});
+
+$("body").mousemove(function(e){
+    var x = e.pageX - this.offsetLeft;
+    var y = e.pageY - this.offsetTop;
+	$(this).css('cursor','none');
+    $('#custom-cursor').css({
+    	left:(x+5),
+    	top:(y+5)
+    });
+}); 
+
+</script>
+
+<!-- <style>
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>© Yi-Chin Lai &nbsp; &nbsp; &nbsp; &nbsp; 2019</p>
+</div> -->
+
+</body>
+</html>
