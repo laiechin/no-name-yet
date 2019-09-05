@@ -1,0 +1,101 @@
+@font-face { 
+	font-family: "No Name Yet - vo.1";
+	src: url("../font/NoNameYet-vo-1GX.ttf");
+}
+
+.tester{
+	color: #FFF;
+}
+
+.tester p {
+	/*z-index: 0;*/
+	/*position: relative;*/
+	margin: 30px;
+	padding: 220px;
+	padding-top: 0.1em;
+	line-height: 1em;
+	color: #FFF;
+	text-shadow: 0 0;
+	font: 100px "No Name Yet - vo.1";
+	font-feature-settings: "kern" on, "liga" on, "calt" on;
+	-moz-font-feature-settings: "kern" on, "liga" on, "calt" on;
+	-webkit-font-feature-settings: "kern" on, "liga" on, "calt" on;
+	-ms-font-feature-settings: "kern" on, "liga" on, "calt" on;
+	-o-font-feature-settings: "kern" on, "liga" on, "calt" on;
+	font-variation-settings: "gric" 0, "mtic" 0, "lear" 0;
+}
+.tester #textInput{
+	color: #FFF;
+	background-color: #000;
+	border-radius: 900px;   
+	background: #fff;
+	border: none;
+	/*height: 0em;*/
+	padding: 2.3em;
+	/*margin: 31px;*/
+	width: 40%;
+}
+
+.tester .labeldiv {
+	width: 50%;
+	display: inline-block;
+}
+
+.tester label {
+	display: inline-block;
+	z-index: 2;
+	position: relative;
+	pointer-events: none;
+	width: 110px;
+	height: 1em;
+	/*margin: 15;*/
+	/*padding: 5em;*/
+	vertical-align: text-top;
+	font: x-small sans-serif;
+	/*color: #000;	*/
+}
+
+/*.tester .slider {
+	z-index: 1;
+	position: relative;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 20%;
+	height: 1em;
+	border-radius: 5px;   
+	background: #333;
+	padding: 0px;
+	margin: 5px;
+	outline: none;
+}
+
+.tester .slider::-webkit-slider-thumb {
+	z-index: 3;
+	position: relative;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 1.5em;
+	border-radius: 50px; 
+	background: #FFF;
+	cursor: auto;
+}
+*/
+/*#text_tester{
+	outline: none;
+	text-transform: uppercase;
+
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+::selection{
+	color: #32DBC6; 
+	background: #000;
+}
+*/

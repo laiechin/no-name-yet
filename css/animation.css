@@ -1,0 +1,106 @@
+@font-face {
+	font-family: "No Name Yet - vo.1";
+	src: url("../font/NoNameYet-vo-1GX.ttf");
+}
+
+.animation1 {
+	font-family: 'No Name Yet - vo.1';
+	text-rendering: geometricPrecision;
+	margin: 10vh auto;
+	text-align: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+@keyframes wacky1  {
+	  0% {font-variation-settings: "gric"   0, "mtic"   0, "lear"   0; }
+	 25% {font-variation-settings: "gric" 100, "mtic"   0, "lear"   0; }
+	 50% {font-variation-settings: "gric"   0, "mtic" 100, "lear"   0; }
+	 75% {font-variation-settings: "gric"   0, "mtic"   0, "lear" 100; }
+	100% {font-variation-settings: "gric"   0, "mtic"   0, "lear"   0; }
+}
+
+.animation1 p {
+  	animation:  wacky1 infinite;
+    animation-duration: 15s;
+    animation-timing-function: ease;
+    font-size: 11vh;
+    margin: 0 auto;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.animation1 p:nth-child(2) {
+	animation-delay: .1s
+}
+
+.animation1 p:nth-child(3) {
+	 animation-delay: .2s
+}
+
+.animation1 p:nth-child(4) {
+	animation-delay: .3s
+}
+
+.animation1 p:nth-child(5) {
+	animation-delay: .4s
+}
+
+.animation1 p:nth-child(6) {
+	animation-delay: .5s
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+@keyframes wacky2  {
+0%   {font-variation-settings: "gric" 0, "mtic" 0, "lear" 0; }
+25%   {font-variation-settings: "gric" 100, "mtic" 0, "lear" 0; }
+50%   {font-variation-settings: "gric" 0, "mtic" 100, "lear" 0; }
+75%   {font-variation-settings: "gric" 0, "mtic" 0, "lear" 100;  }
+100% {font-variation-settings: "gric" 0, "mtic" 0, "lear" 0; }
+	}
+
+
+.animation2 {
+	font-family: 'No Name Yet - vo.1';
+	text-rendering: geometricPrecision;
+	margin: 8vh;
+	text-align: center;
+	overflow: hidden;
+	color: #fff;
+	position:relative;
+}
+
+
+.animation2 p {
+	animation:  wacky2 infinite;
+	animation-duration: 15s;
+	animation-timing-function: ease-out;
+	font-size: 9vh;
+	margin: 0 auto;
+	line-height: 1.2;
+	font-weight: normal;
+}
+
+.animation2 p:nth-child(2) {
+	animation-delay: .1s
+}
+
+.animation2 p:nth-child(3) {
+	animation-delay: .2s
+}
+
+.animation2 p:nth-child(4) {
+	animation-delay: .3s
+}
+
+.animation2 p:nth-child(5) {
+	animation-delay: .4s
+}
+
+.animation2 p:nth-child(6) {
+	animation-delay: .5s
+}
+
