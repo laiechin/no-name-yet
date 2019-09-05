@@ -1,0 +1,181 @@
+
+<html>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<head>
+		<title>No Name Yet vo.1 - variable font</title>
+		<style>
+			@font-face { 
+				font-family: "No Name Yet - vo.1";
+				src: url("font/NoNameYet-vo.1GX.ttf");
+			}
+		    .move p {
+				z-index: 0;
+				position: relative;
+				margin: 30px;
+				padding: 220px;
+				padding-top: 0.1em;
+				line-height: 1em;
+				color: #fff;
+				text-shadow: 0 0;
+				font: 300px "No Name Yet - vo.1";
+				font-feature-settings: "kern" on, "liga" on, "calt" on;
+				-moz-font-feature-settings: "kern" on, "liga" on, "calt" on;
+				-webkit-font-feature-settings: "kern" on, "liga" on, "calt" on;
+				-ms-font-feature-settings: "kern" on, "liga" on, "calt" on;
+				-o-font-feature-settings: "kern" on, "liga" on, "calt" on;
+				font-variation-settings: "gric" 0, "mtic" 0, "lear" 0;
+			}
+			.move #textInput{
+				color: #fff;
+				background-color: #fff;
+				border-radius: 900px;   
+				background: #000;
+				border: none;
+				height: 0em;
+				padding: 2.3em;
+				margin: 31px;
+				width: 40%;
+
+			}
+			.move .labeldiv {
+				width: 50%;
+				display: inline-block;
+
+			}
+ 			.move label {
+				z-index: 2;
+				position: relative;
+				pointer-events: none;
+				width: 100%;
+				height: 1em;
+				margin: 15;
+				padding: 5em;
+				vertical-align: text-top;
+				font: x-small sans-serif;
+				color: #000;
+				
+			}
+			.move .slider {
+				z-index: 1;
+				position: relative;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 20%;
+				height: 2em;
+				border-radius: 5px;   
+				background: #000;
+				padding: 0px;
+				margin: 5px;
+			}
+			.move .slider::-webkit-slider-thumb {
+				z-index: 3;
+				position: relative;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 18px;
+				height: 1.5em;
+				border-radius: 50px; 
+				background: #fff;
+				cursor: auto;
+			}
+		
+		</style>
+
+	</head>
+
+
+	<body bgcolor="#000">
+
+		<div class="move">
+
+			<input type="text" value="No Name Yet vo.1.                          Type here & move your finger!" id="textInput" onkeyup="updateParagraph();" onclick="this.select();" />
+			<div>
+
+				<div class="labeldiv"><label class="sliderlabel" id="label_fontsize" name="Font Size">Font Size</label><input type="range" min="10" max="300" value="140" class="slider" id="fontsize" oninput="updateSlider();"></div>
+
+				<div class="labeldiv"><label class="sliderlabel" id="label_lineheight" name="Line Height">Line Height</label><input type="range" min="30" max="300" value="100" class="slider" id="lineheight" oninput="updateSlider();"></div>
+				
+				<div class='labeldiv'><label class='sliderlabel' id='label_gric' name='Geometric'>Geometric</label><input type='range' min='0' max='100' value='0' class='slider' id='gric' oninput='updateSlider();'></div>
+				
+				<div class='labeldiv'><label class='sliderlabel' id='label_mtic' name='Mimetic'>Mimetic</label><input type='range' min='0' max='100' value='0' class='slider' id='mtic' oninput='updateSlider();'></div>
+				
+				<div class='labeldiv'><label class='sliderlabel' id='label_lear' name='Linear'>Linear</label><input type='range' min='0' max='100' value='0' class='slider' id='lear' oninput='updateSlider();'></div>
+			</div>
+			<p id="text">&#x0041; &#x0042; &#x0043; &#x0044; &#x0045; &#x0046; &#x0047; &#x0048; &#x0049; &#x004A; &#x004B; &#x004C; &#x004D; &#x004E; &#x004F; &#x0050; &#x0051; &#x0052; &#x0053; &#x0054; &#x0055; &#x0056; &#x0057; &#x0058; &#x0059; &#x005A; &#x00C6; &#x0152</p>
+			
+
+			<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+			<script>
+
+				$(function(){ // <-> onload
+					console.log("ok");
+
+					updateSlider();
+
+					$( "body" ).mousemove(function( event ) {
+					  // var pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
+					  // var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+
+					  var x = event.pageX / $('body').width() * 100;
+					  var y = event.pageY / $('body').height() * 100;
+
+					  console.log(x, y);
+
+					  $(".move #gric").val(x);
+					  $(".move #mtic").val(y);
+
+
+					  updateSlider();
+					  // $( "span:first" ).text( "( event.pageX, event.pageY ) : " + pageCoords );
+					  // $( "span:last" ).text( "( event.clientX, event.clientY ) : " + clientCoords );
+					});
+				});
+
+
+
+				function updateParagraph() {
+					// update paragraph text based on user input:
+					var userinput = document.getElementById("textInput");
+					var paragraph = document.getElementById("text");
+					paragraph.textContent = userinput.value;
+				}
+			
+				function updateSlider() {
+					var body = document.getElementById("text");
+					var sliders = document.getElementsByClassName("slider")
+					var bodystyle = "";
+					var settingtext = "";
+					for (var i = 0; i < sliders.length; i++) {
+						var sliderID = sliders[i].id;
+						var sliderValue = sliders[i].value;
+						var label = document.getElementById("label_"+sliderID);
+						var labelName = label.getAttribute("name");
+						
+						label.textContent = ""+labelName+": "+sliderValue
+						if (sliderID == "fontsize") {
+							// Text Size Slider
+							bodystyle += "font-size: "+sliderValue+"px;"
+							label.textContent += "px"
+						} else if (sliderID == "lineheight") {
+							// Line Height Slider
+							bodystyle += "line-height: "+sliderValue/100.0+"em;"
+							label.textContent += "%"
+						} else {
+							// OTVar Slider
+							if (settingtext != "") { settingtext += ", " }
+							settingtext += '"' + sliderID + '" ' + sliderValue
+						}
+					}
+					bodystyle += "font-variation-settings: "+settingtext+";"
+					body.setAttribute("style", bodystyle);
+				}
+			</script>
+
+  
+  		</div>
+
+</body>
+</html>
