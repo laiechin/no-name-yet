@@ -33,7 +33,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: 'OpenSans-SemiBold';
+	font-family: 'OpenSans-SemiBold'; src: url("../font/_Open_Sans-www/OpenSans-SemiBold.ttf");
 }
 
 .left .handle span{
@@ -73,7 +73,7 @@ body{
 	/*display:none;*/
 	z-index: 9999;
 	color: #fff;
-	font-family: 'OpenSans-SemiBold';
+	font-family: 'OpenSans-SemiBold'; src: url("../font/_Open_Sans-www/OpenSans-SemiBold.ttf");
 }
 
 .left .close{
@@ -147,7 +147,7 @@ color: #32DBC6;
 
 .titre {
 	position:relative; margin:150px auto 0 auto; width:90%;text-align:center;
-	font-family: 'NoNameYet-vo1-Scratchy';color:#fff; font-size:10vw;
+	font-family: 'NoNameYet-vo1-Scratchy'; src: url("../font/_NNY/NoNameYet-vo1-Scratchy.ttf"); color:#fff; font-size:10vw;
 	text-transform: uppercase;
 	
 }
