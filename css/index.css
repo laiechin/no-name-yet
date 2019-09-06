@@ -1,6 +1,6 @@
 @font-face { 
 	font-family: "No Name Yet - vo.1";
-	src: url("font/_NNY/NoNameYet-vo-1GX.ttf");
+	src: url("../font/_NNY/NoNameYet-vo-1GX.ttf");
 }
 
 *{
@@ -33,7 +33,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: 'OpenSans-SemiBold';
+	font-family: 'OpenSans-SemiBold'; src: url("laiechin/no-name-yet/font/_Open_Sans-www/OpenSans-SemiBold.ttf")
 }
 
 .left .handle span{
