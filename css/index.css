@@ -33,7 +33,8 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: 'OpenSans-SemiBold.ttf';
+	font-family: "No Name Yet - vo.1";
+	src: url("../font/NoNameYet-vo-1GX.ttf")
 }
 
 .left .handle span{
