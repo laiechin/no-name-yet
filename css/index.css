@@ -33,7 +33,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: 'OpenSans-SemiBold'; src: url("laiechin/no-name-yet/font/_Open_Sans-www/OpenSans-SemiBold.ttf")
+	font-family: 'OpenSans-SemiBold.ttf';
 }
 
 .left .handle span{
