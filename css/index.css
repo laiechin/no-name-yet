@@ -31,8 +31,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	font-size:30px;
-	font-family: "OpenSans-SemiBold";
-	src: url("font/OpenSans-SemiBold.ttf");
+	font-family: "OpenSans-SemiBold"; src: url("OpenSans-SemiBold.ttf"); format('truetype'),
 }
 
 .left .handle span{
