@@ -10,8 +10,6 @@
 
 body{
 	margin: 0;
-	font-family: "No Name Yet - vo.1";
-	src: url("../font/NoNameYet-vo-1GX.ttf");
 }
 ::-webkit-scrollbar{ display:none; }
 
