@@ -1,6 +1,6 @@
 @font-face { 
 	font-family: "No Name Yet - vo.1";
-	src: url("NoNameYet-vo-1GX.ttf");
+	src: url("../font/NoNameYet-vo-1GX.ttf");
 }
 
 *{
@@ -11,7 +11,7 @@
 body{
 	margin: 0;
 	font-family: "No Name Yet - vo.1";
-	src: url("NoNameYet-vo-1GX.ttf")
+	src: url("../font/NoNameYet-vo-1GX.ttf");
 }
 ::-webkit-scrollbar{ display:none; }
 
@@ -34,7 +34,7 @@ body{
 	align-items: center;
 	font-size:30px;
 	font-family: 'OpenSans-SemiBold';
-	src: url("OpenSans-SemiBold.ttf");
+	src: url("../font/OpenSans-SemiBold.ttf");
 }
 
 .left .handle span{
