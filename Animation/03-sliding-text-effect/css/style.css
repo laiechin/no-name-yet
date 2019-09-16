@@ -39,7 +39,7 @@
     }
     span {
       display: inline-block;
-      font-family: "No Name Yet - vo.1"; src: url("../font/NoNameYet-vo-1GX.ttf");
+      font-family: "No Name Yet - vo.1"; src: url("font/NoNameYet-vo-1GX.ttf");
       font-size: 10vw;
       text-transform: uppercase;
       line-height: .8;
