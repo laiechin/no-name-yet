@@ -48,7 +48,7 @@
     }
 
     #anim-regular {
-        font-family: 'NoNameYet-vo1-Regular'; src: url("font/NNY/NoNameYet-vo1-Regular.ttf");
+        font-family: 'NoNameYet-vo1-Regular'; src: url('NoNameYet-vo1-Regular.ttf') format('truetype');
     }
      #anim-geometric {
         font-family: 'NoNameYet-vo1-Geometric'; src: url("font/NNY/NoNameYet-vo1-Geometric.ttf");
