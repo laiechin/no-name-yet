@@ -48,14 +48,14 @@
     }
 
     #anim-regular {
-        font-family: 'NoNameYet-vo1-Regular'; src: url("font/NoNameYet-vo1-Regular.ttf");
+        font-family: 'NoNameYet-vo1-Regular'; src: url("font/NNY/NoNameYet-vo1-Regular.ttf");
     }
      #anim-geometric {
-        font-family: 'NoNameYet-vo1-Geometric'; src: url("../font/NoNameYet-vo1-Geometric.ttf");
+        font-family: 'NoNameYet-vo1-Geometric'; src: url("font/NNY/NoNameYet-vo1-Geometric.ttf");
     }
      #anim-mimetic {
-        font-family: 'NoNameYet-vo1-Mimetic'; src: url("../font/NoNameYet-vo1-Mimetic.ttf");
+        font-family: 'NoNameYet-vo1-Mimetic'; src: url("font/NNY/NoNameYet-vo1-Mimetic.ttf");
     }
      #anim-linear {
-        font-family: 'NoNameYet-vo1-Linear'; src: url("../font/NoNameYet-vo1-Linear.ttf");
+        font-family: 'NoNameYet-vo1-Linear'; src: url("font/NNY/NoNameYet-vo1-Linear.ttf");
     }
